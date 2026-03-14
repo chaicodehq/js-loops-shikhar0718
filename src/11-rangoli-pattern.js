@@ -36,5 +36,38 @@
  *   rangoli(3) // => ["  *", " * *", "* * *", " * *", "  *"]
  */
 export function rangoli(n) {
-  // Your code here
+  // Your code here'
+  let arr =[]
+  if(typeof n==='string' || typeof n==='null' || typeof n==='undefined' || !Number.isInteger(n) || n<=0 ){
+    return arr
+
+  }
+  for(let i =1;i<=n;i++){
+    let s ="";
+    let space = n-i;
+    for(let j=space;j>0;j--){
+      s+=" ";
+    }
+    for(let k = 1;k<=i;k++){
+      s+="* "
+    }
+    s=s.trimEnd();
+    arr.push(s);
+  }
+ for (let i =n-1;i>=1;i--) {
+    let s= "";
+    let space=n-i;
+
+    for (let j =0; j<space;j++) {
+      s+= " ";
+    }
+
+    for (let k =1;k<=i;k++) {
+      s+= "* ";
+    }
+
+    arr.push(s.trimEnd());
+  }
+
+  return arr;
 }
